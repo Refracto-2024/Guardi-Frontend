@@ -3,6 +3,7 @@ import { useState } from "react";
 const Register = () => {
 
     const [formData, setFormData] = useState({
+        name: '',
         username: '',
         password: '',
         retypePassword: '',
@@ -29,15 +30,15 @@ const Register = () => {
                 <h1 className="text-2xl font-semibold mb-6 text-center">Register</h1>
                 
                 <form onSubmit={handleSubmit}>
-                    {/* Username */}
-                    <div className="mb-4">
-                        <label htmlFor="username" className="block text-gray-700 text-sm font-bold mb-2">Username</label>
+                <div className="mb-4">
+                        {/* Username */}
+                        <label htmlFor="username" className="block text-gray-700 text-sm font-bold mb-2">Name</label>
                         <input 
                             type="text" 
-                            name="username" 
-                            id="username" 
+                            name="name" 
+                            id="name" 
                             className="w-full p-2 border rounded-md"
-                            value={formData.username}
+                            value={formData.name}
                             onChange={handleChange}
                         />
                     </div>
@@ -55,19 +56,6 @@ const Register = () => {
                         />
                     </div>
 
-                    {/* Retype Password */}
-                    <div className="mb-4">
-                        <label htmlFor="retypePassword" className="block text-gray-700 text-sm font-bold mb-2">Retype Password</label>
-                        <input 
-                            type="password" 
-                            name="retypePassword" 
-                            id="retypePassword" 
-                            className="w-full p-2 border rounded-md"
-                            value={formData.retypePassword}
-                            onChange={handleChange}
-                        />
-                    </div>
-
                     {/* Email */}
                     <div className="mb-4">
                         <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email</label>
@@ -81,16 +69,30 @@ const Register = () => {
                         />
                     </div>
 
+                    {/* Department */}
+<div className="mb-4">
+    <label htmlFor="department" className="block text-gray-700 text-sm font-bold mb-2">Department</label>
+    <select 
+        name="department" 
+        id="department" 
+        className="w-full p-2 border rounded-md"
+        value={formData.department}
+        onChange={handleChange}
+    >
+        <option value="">Select a department</option>
+        <option value="crime">Crime</option>
+        <option value="crime">Cyber</option>
+        <option value="crime">Police</option>
+        <option value="crime">Traffic</option>
+        {/* Add more options as needed */}
+    </select>
+</div>
+
                     {/* Submit Button */}
                     <div className="mb-4">
                         <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Register</button>
                     </div>
                 </form>
-
-                {/* Login Link */}
-                <div className="text-center">
-                    <p className="text-sm">Already have an account? <a href="#" className="text-blue-500">Login</a></p>
-                </div>
             </div>
         </div>
   )
