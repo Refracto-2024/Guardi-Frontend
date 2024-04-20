@@ -1,13 +1,15 @@
-
 import './App.css'
+import Login from './Pages/Login'
+import Register from './Pages/Register'
 
 function App() {
   
 
   return (
-   <div className="bg-slate-400 h-32 w-full">
-    hello
-   </div>
+   <>
+    <Login/>
+    <Register/>
+   </>
   )
 }
 
